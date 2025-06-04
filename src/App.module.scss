@@ -1,0 +1,10 @@
+@use '@/assets/styles/variables' as *;
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: $desktop-width;
+  margin: 0 auto;
+  display: grid;
+  justify-content: flex-end;
+}
