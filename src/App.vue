@@ -1,26 +1,16 @@
-<script lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+<script setup lang="ts">
+import { RouterView } from "vue-router";
 import styles from "./App.module.scss";
 import Header from "./components/layout/header/Header.vue";
 import Menu from "./components/layout/menu/Menu.vue";
-
-export default {
-  components: { Header, Menu },
-  computed: {
-    $styles() {
-      return styles;
-    },
-  },
-};
+import RightSidebar from "./components/screens/home/right-sidebar/RightSidebar.vue";
 </script>
 
 <template>
-  <div :class="$styles.container">
+  <div :class="styles.container">
     <Header />
     <Menu />
-    <p>dsf</p>
     <RouterView />
+    <RightSidebar />
   </div>
 </template>
-
-<style scoped></style>

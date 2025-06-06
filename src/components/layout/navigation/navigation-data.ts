@@ -1,5 +1,4 @@
 import type { IListItem } from "@/types";
-
 const items: IListItem[] = [
   { id: 1, name: "Music", to: "/" },
   { id: 2, name: "Podcast", to: "/podcast" },

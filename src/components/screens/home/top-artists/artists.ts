@@ -1,4 +1,6 @@
-const artists = [
+import type { IArtistItem } from "@/types";
+
+const artists: IArtistItem[] = [
   {
     name: 'Justin bieber',
     image: '/images/artists/Bieber.jpg',

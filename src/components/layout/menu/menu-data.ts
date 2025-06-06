@@ -1,59 +1,61 @@
-export const menu = [
+import type { IListItem } from "@/types";
+
+export const menu: IListItem[] = [
   {
-    name: 'Discover',
-    to: '/',
+    name: "Discover",
+    to: "/",
   },
   {
-    name: 'Explorer',
-    to: '/explorer',
+    name: "Explorer",
+    to: "/explorer",
   },
   {
-    name: 'Search',
-    to: '/search',
+    name: "Search",
+    to: "/search",
   },
 ];
 
-export const library = [
+export const library: IListItem[] = [
   {
-    name: 'My Music',
-    to: '/my-music',
+    name: "My Music",
+    to: "/my-music",
   },
   {
-    name: 'Albums',
-    to: '/albums',
+    name: "Albums",
+    to: "/albums",
   },
   {
-    name: 'Artists',
-    to: '/artists',
-  },
-];
-
-export const playlist = [
-  {
-    name: 'Cover',
-    to: '/cover',
-  },
-  {
-    name: 'Favorites',
-    to: '/favorites',
-  },
-  {
-    name: 'Shared',
-    to: '/shared',
-  },
-  {
-    name: 'Downloads',
-    to: '/downloads',
+    name: "Artists",
+    to: "/artists",
   },
 ];
 
-export const others = [
+export const playlist: IListItem[] = [
   {
-    name: 'Settings',
-    to: '/settings',
+    name: "Cover",
+    to: "/cover",
   },
   {
-    name: 'Logout',
-    to: '/logout',
+    name: "Favorites",
+    to: "/favorites",
+  },
+  {
+    name: "Shared",
+    to: "/shared",
+  },
+  {
+    name: "Downloads",
+    to: "/downloads",
+  },
+];
+
+export const others: IListItem[] = [
+  {
+    name: "Settings",
+    to: "/settings",
+  },
+  {
+    name: "Logout",
+    to: "/logout",
   },
 ];

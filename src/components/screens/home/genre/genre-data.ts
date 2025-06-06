@@ -1,39 +1,41 @@
-const genre = [
+import type { IListItem } from "@/types";
+
+const genre: IListItem[] = [
   {
-    name: 'Hip Hop',
-    to: '/',
+    name: "Hip Hop",
+    to: "/",
   },
   {
-    name: 'Electro Pop',
-    to: '/podcast',
+    name: "Electro Pop",
+    to: "/podcast",
   },
   {
-    name: 'Jazz',
-    to: '/radio',
+    name: "Jazz",
+    to: "/radio",
   },
   {
-    name: 'Indie',
-    to: '/live',
+    name: "Indie",
+    to: "/live",
   },
   {
-    name: 'Dance Beat',
-    to: '/',
+    name: "Dance Beat",
+    to: "/",
   },
   {
-    name: 'Classical',
-    to: '/podcast',
+    name: "Classical",
+    to: "/podcast",
   },
   {
-    name: 'Metal',
-    to: '/radio',
+    name: "Metal",
+    to: "/radio",
   },
   {
-    name: 'Rock',
-    to: '/live',
+    name: "Rock",
+    to: "/live",
   },
   {
-    name: 'Country',
-    to: '/live',
+    name: "Country",
+    to: "/live",
   },
 ];
 

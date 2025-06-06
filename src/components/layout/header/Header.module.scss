@@ -1,7 +1,7 @@
 @use '@/assets/styles/variables' as *;
 
 .headerContainer {
-  max-width: 1180px;
+  width: 1180px;
   display: flex;
   align-items: center;
   padding: 24px 42px;
@@ -42,7 +42,7 @@
 }
 
 .profileContainer {
-  max-width: 295px;
+  max-width: 300px;
   display: flex;
   align-items: center;
 }
@@ -73,7 +73,6 @@
 }
 
 .profileWrapper {
-  width: 177px;
   display: flex;
   align-items: center;
 }
