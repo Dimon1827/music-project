@@ -18,6 +18,10 @@
 
 .logo {
   margin-bottom: 63px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .title {

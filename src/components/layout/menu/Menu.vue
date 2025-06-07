@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from "vue-router";
 import styles from "./Menu.module.scss";
 import MenuItem from "./menu-item/MenuItem.vue";
 import { menu, library, playlist, others } from "./menu-data";
@@ -6,13 +7,10 @@ import { menu, library, playlist, others } from "./menu-data";
 
 <template>
   <div :class="styles.menuContainer">
-    <img
-      :class="styles.logo"
-      src="/icons/logo.svg"
-      alt="Лого Mytones"
-      width="131"
-      height="24"
-    />
+    <RouterLink :to="'/'">
+      <img :class="styles.logo" src="/icons/logo.svg" alt="Лого Mytones" width="131" height="24" />
+    </RouterLink>
+
     <div :class="styles.menuWrapper">
       <h2 :class="styles.title">Menu</h2>
       <ul :class="styles.menuList">

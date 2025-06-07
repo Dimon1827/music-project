@@ -1,5 +1,6 @@
 import Explorer from '@/components/screens/explorer/Explorer.vue'
 import Home from '@/components/screens/home/Home.vue'
+import MyMusic from '@/components/screens/my-music/MyMusic.vue';
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -14,6 +15,11 @@ const router = createRouter({
       path: "/explorer",
       name: "explorer",
       component: Explorer,
+    },
+    {
+      path: "/my-music",
+      name: "my-music",
+      component: MyMusic,
     },
   ],
 });

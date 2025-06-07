@@ -13,7 +13,7 @@ const currentTrackIndex = ref(0);
 <template>
   <section :class="styles.RightSidebar">
     <div :class="styles.WeeklyWrapper">
-      <TopWrapper text="'Top 100 Weekly'" />
+      <TopWrapper :text="'Top 100 Weekly'" />
       <WeeklySong
         :currentPlaylist="currentPlaylist"
         v-model:currentTrackIndex="currentTrackIndex"
