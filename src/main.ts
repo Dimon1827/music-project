@@ -2,6 +2,8 @@ import "@/assets/styles/index.scss";
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { register } from "swiper/element/bundle";
+register();
 
 import App from './App.vue'
 import router from './router'

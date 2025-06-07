@@ -59,7 +59,7 @@ const usePlaySong = (playlist: ISong[], initialIndex: Ref<number>) => {
 
     let musicObject = playlist[number];
     const newMusic = {
-      id: playlist.length,
+      id: musicObject.id,
       name: musicObject.name,
       artist: musicObject.artist,
       songSrc: musicObject.songSrc,
