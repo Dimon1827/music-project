@@ -2,10 +2,14 @@
 import Shuffle from "@/assets/icons/shuffle.svg";
 import styles from "./MyMusic.module.scss";
 import useRepeatSong from "@/hooks/useRepeatSong";
-import weeklySong from "../home/right-sidebar/weeklySongData";
 import MyMusicItem from "./MyMusicItem.vue";
+import { useMusicStore } from "@/stores/useMusicStore";
+import { storeToRefs } from "pinia";
 
 const { isMusicRepeat, handleRepeatAudio } = useRepeatSong();
+
+const musicStore = useMusicStore();
+const { myMusic } = storeToRefs(musicStore);
 </script>
 <template>
   <div :class="styles.myMusicContainer">
@@ -27,7 +31,7 @@ const { isMusicRepeat, handleRepeatAudio } = useRepeatSong();
       </div>
     </div>
     <ul :class="styles.myMusicList">
-      <MyMusicItem v-for="(item, index) in weeklySong" :key="index" :item="item" />
+      <MyMusicItem v-for="item of myMusic" :key="item.id" :weeklySong="item" />
     </ul>
   </div>
 </template>

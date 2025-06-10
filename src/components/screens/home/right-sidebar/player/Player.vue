@@ -8,6 +8,8 @@ import useRepeatSong from "@/hooks/useRepeatSong";
 import usePlaySong from "@/hooks/usePlaySong";
 import type { ISong } from "@/types";
 import { ref } from "vue";
+import { useMusicStore } from "@/stores/useMusicStore";
+import { storeToRefs } from "pinia";
 
 interface IPlayerProps {
   playlist: ISong[];
@@ -15,9 +17,9 @@ interface IPlayerProps {
 
 const props = defineProps<IPlayerProps>();
 const { playlist } = props;
-const currentTrackIndex = defineModel<number>("currentTrackIndex", {
-  required: true,
-});
+
+const musicStore = useMusicStore();
+const { currentTrackIndex } = storeToRefs(musicStore);
 
 const audioProgress = ref(0);
 const musicTotalLength = ref("3:10");

@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 12px;
-  cursor: pointer;
+  position: relative;
 }
 
 .number {
@@ -56,6 +56,11 @@
 
 .textWrapper {
   width: 157px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .title {

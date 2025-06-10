@@ -6,23 +6,13 @@ import WeeklySongItem from "./WeeklySongItem.vue";
 
 const props = defineProps<{ currentPlaylist: ISong[] }>();
 const { currentPlaylist } = props;
-
-const currentTrackIndex = defineModel<number>('currentTrackIndex');
-
-function handleUpdateIndex(index: number) {
-  currentTrackIndex.value = index;
-}
-
 </script>
 <template>
   <ul :class="styles.WeeklyList">
     <WeeklySongItem
-      v-for="(weeklySong, index) in currentPlaylist"
-      :key="weeklySong.name"
+      v-for="weeklySong in currentPlaylist"
+      :key="weeklySong.id"
       :weeklySong="weeklySong"
-      @click="handleUpdateIndex(index)"
     />
   </ul>
 </template>
-
-

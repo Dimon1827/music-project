@@ -77,6 +77,7 @@ button {
 }
 
 .myMusicItem {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: $white-color;
@@ -92,6 +93,11 @@ button {
 
 .textWrapper {
   margin-right: auto;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .title {
@@ -116,6 +122,7 @@ button {
 .triplet {
   width: 4px;
   height: 19px;
+  background: ('/icons/triplet.svg') no-repeat
 }
 
 .time {
@@ -135,7 +142,7 @@ button {
   fill: $primary-color;
 }
 
-.favoriteImage { 
+.favoriteImage {
   &:hover {
     opacity: 0.6;
   }
@@ -153,5 +160,13 @@ button {
 
   &:hover {
     color: $primary-color
+  }
+}
+
+.additionalFunctions {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
   }
 }

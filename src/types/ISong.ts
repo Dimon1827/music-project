@@ -7,4 +7,3 @@ export interface ISong {
   isFavorite?: boolean;
   time?: string;
 }
-
