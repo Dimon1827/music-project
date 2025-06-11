@@ -1,0 +1,62 @@
+@use '@/assets/styles/variables' as *;
+
+.albumsWrapper {
+  margin: 0 21px;
+  width: 746px;
+}
+
+.mainTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 92%;
+  color: $primary-color;
+  margin: 0;
+  margin-left: 23px;
+  margin-bottom: 35px;
+}
+
+.albumsContainer {
+  padding: 33px;
+  background-color: $white-color;
+  border-radius: 20px;
+}
+
+.subTitle {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 122%;
+  color: $light-grey-color;
+  margin-bottom: 22px;
+}
+
+.list {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.item {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.image {
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 11px;
+}
+
+.name {
+  margin-bottom: 0;
+}
+
+.artist {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 157%;
+  color: $light-grey-color;
+}

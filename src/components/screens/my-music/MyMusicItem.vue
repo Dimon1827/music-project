@@ -2,7 +2,7 @@
 import styles from "./MyMusic.module.scss";
 import Favorite from "@/assets/icons/favorite.svg";
 import type { ISong } from "@/types";
-import AdditionalFunctions from "@/components/UI/AdditionalFunctions.vue";
+import AdditionalFunctions from "@/components/UI/additional-functions/AdditionalFunctions.vue";
 import { ref } from "vue";
 import { useMusicStore } from "@/stores/useMusicStore";
 const props = defineProps<{ weeklySong: ISong }>();
@@ -14,6 +14,7 @@ const handleToggleComponent = () => {
 };
 
 const { toggleFavorite, updateIndex } = useMusicStore();
+
 </script>
 <template>
   <li :class="styles.myMusicItem">

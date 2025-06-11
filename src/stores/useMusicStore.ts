@@ -5,6 +5,7 @@ import type { ISong } from "@/types";
 export const useMusicStore = defineStore("musicStore", () => {
   const currentTrackIndex = ref(0);
   const myMusic = ref<ISong[]>([]);
+  const activePlaylist = ref<ISong[]>(weeklySong);
   const favoriteMusics = computed(() => {
     return myMusic.value.filter((song) => song.isFavorite);
   });
@@ -14,6 +15,11 @@ export const useMusicStore = defineStore("musicStore", () => {
     if (song) {
       song.isFavorite = !song.isFavorite;
     }
+  };
+
+  const setActivePlaylist = (playlist: ISong[]) => {
+    activePlaylist.value = playlist;
+    currentTrackIndex.value = 0;
   };
 
   function updateIndex(index: number) {
@@ -39,5 +45,7 @@ export const useMusicStore = defineStore("musicStore", () => {
     deleteMusic,
     addMusic,
     updateIndex,
+    setActivePlaylist,
+    activePlaylist,
   };
 });

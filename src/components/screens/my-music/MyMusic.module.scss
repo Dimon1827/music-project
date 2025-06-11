@@ -1,55 +1,6 @@
 @use '@/assets/styles/variables' as *;
 
 
-.topWrapper {
-  margin-bottom: 35px;
-  width: 700px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mainTitle {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 92%;
-  color: $primary-color;
-  margin: 0;
-  margin-left: 23px;
-}
-
-.playButton {
-  border: 8px solid transparent;
-  border-left: 13px solid $primary-color;
-}
-
-.buttonsContainer,
-.buttonWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.buttonsContainer {
-  width: 169px;
-}
-
-.buttonWrapper {
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-
-.textButton {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 157%;
-  color: $primary-color;
-  margin: 0;
-}
 
 .myMusicContainer {
   margin-left: 19px;
@@ -59,15 +10,6 @@ button {
   border: none;
   background-color: transparent;
   padding: 0;
-}
-
-.shuffleImage {
-  color: $primary-color;
-  margin-right: 11px;
-
-  &:hover {
-    color: $primary-color;
-  }
 }
 
 .myMusicList {

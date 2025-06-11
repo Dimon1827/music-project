@@ -1,14 +1,19 @@
 import type { ISong } from "@/types";
 import { ref, watch, type Ref } from "vue";
 
-const usePlaySong = (playlist: ISong[], initialIndex: Ref<number>) => {
-  const currentMusicDetails = ref(playlist[initialIndex.value]);
+const usePlaySong = (playlist: Ref<ISong[]>, initialIndex: Ref<number>) => {
+  const currentMusicDetails = ref(playlist.value[initialIndex.value]);
 
   const isAudioPlaying = ref(false);
-  const musicIndex = ref(initialIndex);
+  const musicIndex = ref(initialIndex.value);
   const isFirstRender = ref(true);
-
   const currentAudio = ref<HTMLAudioElement | null>(null);
+
+  watch(playlist, (newPlaylist) => {
+    if (newPlaylist.length === 0) return;
+
+    updateCurrentMusicDetails(musicIndex.value);
+  });
 
   watch(initialIndex, (newIndex) => {
     if (isFirstRender.value) {
@@ -32,7 +37,7 @@ const usePlaySong = (playlist: ISong[], initialIndex: Ref<number>) => {
 
   function handlePreviousSong() {
     if (musicIndex.value === 0) {
-      let setNumber = playlist.length - 1;
+      let setNumber = playlist.value.length - 1;
       musicIndex.value = setNumber;
       updateCurrentMusicDetails(setNumber);
     } else {
@@ -43,7 +48,7 @@ const usePlaySong = (playlist: ISong[], initialIndex: Ref<number>) => {
   }
 
   function handleNextSong() {
-    if (musicIndex.value >= playlist.length - 1) {
+    if (musicIndex.value >= playlist.value.length - 1) {
       let setNumber = 0;
       musicIndex.value = setNumber;
       updateCurrentMusicDetails(setNumber);
@@ -57,7 +62,7 @@ const usePlaySong = (playlist: ISong[], initialIndex: Ref<number>) => {
   function updateCurrentMusicDetails(number: number) {
     if (!currentAudio.value) return;
 
-    let musicObject = playlist[number];
+    let musicObject = playlist.value[number];
     const newMusic = {
       id: musicObject.id,
       name: musicObject.name,

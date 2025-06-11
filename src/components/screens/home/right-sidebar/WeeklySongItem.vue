@@ -2,7 +2,7 @@
 import type { ISong } from "@/types";
 import styles from "./Weekly.module.scss";
 import { ref } from "vue";
-import AdditionalFunctions from "@/components/UI/AdditionalFunctions.vue";
+import AdditionalFunctions from "@/components/UI/additional-functions/AdditionalFunctions.vue";
 import { useMusicStore } from "@/stores/useMusicStore";
 import { storeToRefs } from "pinia";
 

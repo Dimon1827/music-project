@@ -11,15 +11,8 @@ import { ref } from "vue";
 import { useMusicStore } from "@/stores/useMusicStore";
 import { storeToRefs } from "pinia";
 
-interface IPlayerProps {
-  playlist: ISong[];
-}
-
-const props = defineProps<IPlayerProps>();
-const { playlist } = props;
-
 const musicStore = useMusicStore();
-const { currentTrackIndex } = storeToRefs(musicStore);
+const { currentTrackIndex, activePlaylist } = storeToRefs(musicStore);
 
 const audioProgress = ref(0);
 const musicTotalLength = ref("3:10");
@@ -32,7 +25,7 @@ const {
   handleAudioPlay,
   handlePreviousSong,
   handleNextSong,
-} = usePlaySong(playlist, currentTrackIndex);
+} = usePlaySong(activePlaylist, currentTrackIndex);
 
 function handleMusicProgressBar(e: Event) {
   if (!currentAudio.value) return;

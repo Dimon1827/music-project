@@ -3,14 +3,17 @@ import styles from "./Weekly.module.scss";
 import weeklySongs from "./weeklySongData";
 import type { ISong } from "@/types";
 import WeeklySongItem from "./WeeklySongItem.vue";
+import { useMusicStore } from "@/stores/useMusicStore";
+import { storeToRefs } from "pinia";
 
-const props = defineProps<{ currentPlaylist: ISong[] }>();
-const { currentPlaylist } = props;
+const musicStore = useMusicStore();
+const { activePlaylist } = storeToRefs(musicStore);
+const basePlaylist = activePlaylist.value;
 </script>
 <template>
   <ul :class="styles.WeeklyList">
     <WeeklySongItem
-      v-for="weeklySong in currentPlaylist"
+      v-for="weeklySong in basePlaylist"
       :key="weeklySong.id"
       :weeklySong="weeklySong"
     />

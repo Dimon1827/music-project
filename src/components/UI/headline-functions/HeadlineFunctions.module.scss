@@ -1,0 +1,60 @@
+@use '@/assets/styles/variables' as *;
+
+
+.mainTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 92%;
+  color: $primary-color;
+  margin: 0;
+  margin-left: 23px;
+}
+
+.topWrapper {
+  margin-bottom: 35px;
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonsContainer,
+.buttonWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonsContainer {
+  width: 169px;
+}
+
+.buttonWrapper {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.playButton {
+  border: 8px solid transparent;
+  border-left: 13px solid $primary-color;
+}
+
+.textButton {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 157%;
+  color: $primary-color;
+  margin: 0;
+}
+
+.shuffleImage {
+  color: $primary-color;
+  margin-right: 11px;
+
+  &:hover {
+    color: $primary-color;
+  }
+}

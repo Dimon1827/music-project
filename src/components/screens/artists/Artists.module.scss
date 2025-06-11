@@ -1,0 +1,179 @@
+@use '@/assets/styles/variables' as *;
+
+
+.artistsWrapper {
+  margin: 0 21px;
+  width: 746px;
+}
+
+.mainTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 92%;
+  color: $primary-color;
+  margin: 0;
+  margin-left: 23px;
+  margin-bottom: 35px;
+}
+
+.artistsContainer {
+  border-radius: 20px;
+  padding: 32px 28px 5px 28px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $white-color;
+}
+
+.leftBlock {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: -42px;
+    width: 2px;
+    height: 690px;
+    background: #f0f0f5;
+  }
+}
+
+.artistItem {
+  display: flex;
+  width: 290px;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.image {
+  margin-right: 28px;
+  border-radius: 50px;
+}
+
+.artist {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 122%;
+  color: $light-grey-color;
+}
+
+.artistName {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 92%;
+  color: $light-grey-color;
+  margin-bottom: 13px;
+}
+
+.artistsText {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 157%;
+  color: $grey-blue-color;
+  margin-bottom: 23px;
+}
+
+.rightBlock {}
+
+.buttonsContainer,
+.buttonWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonsContainer {
+  width: 169px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 40px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: -22px;
+    left: -73px;
+    width: 289px;
+    height: 2px;
+    background: #f0f0f5;
+
+  }
+}
+
+.buttonWrapper {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.playButton {
+  border: 8px solid transparent;
+  border-left: 13px solid $primary-color;
+}
+
+.textButton {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 157%;
+  color: $primary-color;
+  margin: 0;
+}
+
+.shuffleImage {
+  color: $primary-color;
+  margin-right: 11px;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.albumsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 314px;
+  margin-bottom: 29px;
+}
+
+
+.albumImage {
+  border-radius: 9px;
+}
+
+.albumName {
+  margin: 0;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 122%;
+  color: $light-grey-color;
+}
+
+.date {
+  margin: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 160%;
+  color: $light-grey-color;
+}
+
+.text {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 157%;
+  color: $primary-color;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: ">";
+    top: 0;
+    right: 107px;
+  }
+}

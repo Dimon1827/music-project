@@ -1,3 +1,5 @@
+import Albums from '@/components/screens/albums/Albums.vue';
+import Artists from '@/components/screens/artists/Artists.vue';
 import Explorer from '@/components/screens/explorer/Explorer.vue'
 import Home from '@/components/screens/home/Home.vue'
 import MyMusic from '@/components/screens/my-music/MyMusic.vue';
@@ -20,6 +22,16 @@ const router = createRouter({
       path: "/my-music",
       name: "my-music",
       component: MyMusic,
+    },
+    {
+      path: "/albums",
+      name: "albums",
+      component: Albums,
+    },
+    {
+      path: "/artists",
+      name: "artists",
+      component: Artists,
     },
   ],
 });
