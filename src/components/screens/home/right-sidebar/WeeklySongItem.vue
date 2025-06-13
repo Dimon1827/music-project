@@ -6,8 +6,8 @@ import AdditionalFunctions from "@/components/UI/additional-functions/Additional
 import { useMusicStore } from "@/stores/useMusicStore";
 import { storeToRefs } from "pinia";
 
-const props = defineProps<{ weeklySong: ISong }>();
-const { weeklySong } = props;
+const props = defineProps<{ weeklySong: ISong; index: number }>();
+const { weeklySong, index } = props;
 
 const isShow = ref(false);
 
@@ -18,7 +18,7 @@ const { updateIndex } = useMusicStore();
 </script>
 <template>
   <li :class="styles.weeklyItem">
-    <span :class="styles.number">0{{ weeklySong.id }}</span>
+    <span :class="styles.number">0{{ index }}</span>
     <img
       :class="styles.image"
       :src="weeklySong.image"

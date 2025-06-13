@@ -1,14 +1,26 @@
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { defineStore } from "pinia";
 import weeklySong from "@/components/screens/home/right-sidebar/weeklySongData";
 import type { ISong } from "@/types";
+import useFetchData from "@/hooks/useFetchData";
 export const useMusicStore = defineStore("musicStore", () => {
+  const { musicData, isLoading } = useFetchData();
   const currentTrackIndex = ref(0);
   const myMusic = ref<ISong[]>([]);
   const activePlaylist = ref<ISong[]>(weeklySong);
   const favoriteMusics = computed(() => {
     return myMusic.value.filter((song) => song.isFavorite);
   });
+
+  watch(
+    () => musicData.value,
+    (newData) => {
+      if (newData?.length) {
+        activePlaylist.value = newData;
+      }
+    },
+    { immediate: true }
+  );
 
   const toggleFavorite = (id: number) => {
     const song = myMusic.value.find((song) => song.id === id);
@@ -47,5 +59,6 @@ export const useMusicStore = defineStore("musicStore", () => {
     updateIndex,
     setActivePlaylist,
     activePlaylist,
+    isLoading,
   };
 });

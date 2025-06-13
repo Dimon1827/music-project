@@ -2,8 +2,43 @@
 import styles from "./Artists.module.scss";
 import Shuffle from "@/assets/icons/shuffle.svg";
 import artistsData from "./artists-data";
+import { onMounted, watchEffect } from "vue";
+import useFetchData from "@/hooks/useFetchData";
+
+const { musicData, isLoading, error } = useFetchData();
+watchEffect(() => {
+  if (musicData.value) {
+    console.log("Данные загружены:", musicData.value);
+  }
+});
 </script>
 <template>
+  <!-- <div v-if="isLoading">Загрузка...</div>
+  <div v-else-if="error">{{ error }}</div>
+  <div v-else>
+    <div v-for="track in musicData.results" :key="track.id">
+      {{ track.name }}
+    </div>
+  </div> -->
+  <!-- <div v-if="isLoading">Загрузка...</div>
+  <div v-else-if="error">Ошибка: {{ error }}</div>
+  <div
+    v-else-if="
+      musicData &&
+      musicData.value &&
+      musicData.value.headers &&
+      musicData.value.headers.status === 'success'
+    "
+  >
+    <h2>Треки:</h2>
+    <div v-for="(track, index) in musicData.value.results" :key="index">
+      <p>Track {{ index + 1 }}: {{ track.name }} by {{ track.artist_name }}</p>
+      <p>Audio URL: {{ track.audio }}</p>
+      <p>License URL: {{ track.license_ccurl }}</p>
+      <a :href="track.license_ccurl" target="_blank">Проверить лицензию</a>
+    </div>
+  </div>
+  <div v-else>Нет данных о музыке или ошибка в API.</div> -->
   <div :class="styles.artistsWrapper">
     <h1 :class="styles.mainTitle">Artists</h1>
     <div :class="styles.artistsContainer">
